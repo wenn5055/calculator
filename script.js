@@ -22,9 +22,9 @@ buttons.forEach((button) => {
     
       // Restore after 2 seconds
       setTimeout(() => {
-        display.value = "";
+        reset();
         display.style.textAlign = prevAlign;
-        if (isOn === true) statuss.textContent = "[ON]";
+        if (isOn === true) statuss.textContent = "[ON]"; 
         else statuss.textContent = "[OFF]";
       }, 2000);
     } else {
@@ -67,4 +67,11 @@ buttons.forEach((button) => {
 
 function isOperator(value) {
     return value === "+" || value === "-" || value === "x" || value === "÷";
+}
+
+function reset() {
+  afterEquals = false;
+  exp = "";
+  storedANS = "";
+  display.value = "";
 }
